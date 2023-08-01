@@ -1,0 +1,22 @@
+.filterForm{
+    background: #d25d5d;
+        padding: 15px;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        display: flex;
+        align-items: center;
+        max-width: 800px;
+        margin: 0 auto;
+        border-radius: 3px;
+            color: white;
+                font-size: 18px;
+    }
+.filterForm__selector{
+        width: auto;
+            height: 30px;
+            background: white;
+}
+.filterQuery_input{
+    height: 30px;
+    padding: 0 10px;
+}

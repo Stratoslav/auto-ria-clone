@@ -1,0 +1,13 @@
+.car__list-item{
+        border-bottom: 1px solid #dcdcdc;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0px 10px 10px 10px ;
+}
+.car__list-link{
+    padding: 0 5px;
+  
+        color: black;
+        font-weight: 500;
+text-decoration: revert;
+}

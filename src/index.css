@@ -11,3 +11,23 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+button{
+  cursor: pointer;
+    padding: 10px;
+    border-radius: 3px;
+    font-size: 18px;
+}
+a{
+  text-decoration: none;
+  /* color: white; */
+  cursor: pointer;
+}
+input#image{
+  color:white ;
+      font-size: 18px;
+}
+
+ul{
+  list-style: none;
+  padding: 0;
+}

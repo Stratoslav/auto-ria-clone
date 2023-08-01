@@ -1,0 +1,14 @@
+.car{
+    color: white;
+        font-size: 18px;
+        max-width: 600px;
+        margin: 0 auto;
+        background: #db5c4c;
+        border-radius: 3px;
+        border: 1px solid #db5c4c;
+}
+.car_img{
+        width: 500px;
+            border-radius: 3px;
+            box-shadow: 0 0 11px 3px black;
+}
