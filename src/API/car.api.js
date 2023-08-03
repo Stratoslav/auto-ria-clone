@@ -1,4 +1,5 @@
 import { allCarsActions } from "../redux/slice/allCarsSlice";
+import { autoSliceActions } from "../redux/slice/autoSlice";
 import store from "../redux/store";
 const default_URI = "http://auto/cars";
 export async function getAllCar() {
@@ -33,10 +34,12 @@ export async function getOneCar(id, setCar) {
 
 export async function addCar(formData) {
   try {
-    await fetch(default_URI, {
+    const res = await fetch(default_URI, {
       method: "POST",
       body: formData,
     });
+    const data = res.json();
+    console.log(res);
   } catch (error) {
     console.log("Error fetching data:", error.message);
   }
@@ -106,5 +109,27 @@ export async function sortFromTo(value) {
     store.dispatch(allCarsActions.getFilteredCarFromTo(data));
   } catch (e) {
     console.log("Error fetching data:", e);
+  }
+}
+export async function getCarImages(id) {
+  try {
+    const res = await fetch(`${default_URI}/get_images/${id}`, {
+      method: "GET",
+    });
+    const data = await res.json();
+
+    store.dispatch(autoSliceActions.getCarImages(data));
+  } catch (e) {
+    console.log("Error fetching data:", e);
+  }
+}
+export async function postImageToCar(id, image) {
+  try {
+    await fetch(`${default_URI}/post_image/${id}`, {
+      method: "POST",
+      body: image,
+    });
+  } catch (e) {
+    console.log("Error fetching data:", e.message);
   }
 }

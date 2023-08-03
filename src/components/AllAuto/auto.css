@@ -1,4 +1,5 @@
 .car__list-item{
+    display: block;
         border-bottom: 1px solid #dcdcdc;
             max-width: 1000px;
             margin: 0 auto;

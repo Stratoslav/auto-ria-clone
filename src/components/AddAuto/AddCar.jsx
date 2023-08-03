@@ -29,7 +29,7 @@ function AddCar() {
     formData.append("phone", phone);
 
     await addCar(formData);
-    navigate("/");
+    // navigate("/");
   };
   return (
     <div>
