@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   images: [],
+  description: [],
 };
 
 const autoSlice = createSlice({
@@ -10,6 +11,9 @@ const autoSlice = createSlice({
   reducers: {
     getCarImages: (state, action) => {
       state.images = action.payload;
+    },
+    getCarDescription: (state, action) => {
+      state.description = action.payload;
     },
   },
 });

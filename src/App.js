@@ -18,6 +18,8 @@ function App() {
         <Route path="/search" element={<AllAuto />} />
         <Route path="/select" element={<AllAuto />} />
         <Route path="cars/:id" element={<Auto />} />
+        <Route path="cars/add/:id" element={<Auto />} />
+        <Route path="cars/details/:id" element={<Auto />} />
         <Route path="cars/create" element={<AddCar />} />
         <Route path="cars/update/:id" element={<EditCar />} />
       </Routes>

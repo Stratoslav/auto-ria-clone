@@ -19,6 +19,9 @@ const allCarsSlice = createSlice({
     getFilteredCarByYear: (state, action) => {
       state.cars = action.payload;
     },
+    getFilteredCarByMoney: (state, action) => {
+      state.cars = action.payload;
+    },
     getFilteredCarFromTo: (state, action) => {
       state.cars = action.payload;
     },

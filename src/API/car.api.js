@@ -27,6 +27,16 @@ export async function getOneCar(id, setCar) {
     const data = await res.json();
 
     setCar(data);
+    const res2 = await fetch(`${default_URI}/details/${id}`, {
+      method: "GET",
+    });
+    if (res2.status === 404) {
+      store.dispatch(autoSliceActions.getCarDescription([]));
+      return;
+    }
+    const data2 = await res2.json();
+
+    store.dispatch(autoSliceActions.getCarDescription(data2));
   } catch (error) {
     console.log("Error fetching data:", error.message);
   }
@@ -101,6 +111,17 @@ export async function getByFilterYears(from, to) {
     console.log("Error fetching data:", e.message);
   }
 }
+export async function getByFilterMoney(from, to) {
+  try {
+    const data = await fetch(`${default_URI}/filter?low=${from}&big=${to}`, {
+      method: "GET",
+    });
+    const response = await data.json();
+    store.dispatch(allCarsActions.getFilteredCarByMoney(response));
+  } catch (e) {
+    console.log("Error fetching data:", e.message);
+  }
+}
 
 export async function sortFromTo(value) {
   try {
@@ -129,6 +150,19 @@ export async function postImageToCar(id, image) {
       method: "POST",
       body: image,
     });
+  } catch (e) {
+    console.log("Error fetching data:", e.message);
+  }
+}
+
+export async function addMoreFunctional(formData, id) {
+  try {
+    const res = await fetch(`${default_URI}/add/${id}`, {
+      method: "POST",
+      body: formData,
+    });
+    const data = await res.json();
+    console.log(data);
   } catch (e) {
     console.log("Error fetching data:", e.message);
   }
