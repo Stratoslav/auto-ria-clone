@@ -3,7 +3,7 @@
         flex-wrap: wrap;
         max-width: 305px;
         justify-content: center;
-            background: #db5c4c;
+            background: #1d6b8a;
             padding: 10px 0;
                 border-radius: 3px;
 }
@@ -32,6 +32,7 @@
         padding: 10px;
         color: white;
         border-radius: 3px;
-        background: #db5c4c;
+        background: #1d6b8a;
+            margin-top: 10px;
         font-size: 18px;
 }

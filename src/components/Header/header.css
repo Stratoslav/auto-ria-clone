@@ -1,7 +1,14 @@
 .header{
-        background: #db5c4c;
+        background: #1d6b8a;
             border-bottom: 1px solid #ffffff;
-            padding: 10px;
+            padding: 15px;
             box-shadow: 0 0 14px -2px black;
             margin-bottom: 50px;
+            text-align: initial;
+}
+
+.header > a {
+    color: #fff;
+    font-size: 21px;
+    margin-right: 15px;
 }

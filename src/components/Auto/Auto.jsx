@@ -55,7 +55,7 @@ function AllAutoComponent() {
     id: car.id,
   };
   return (
-    <div>
+    <div className="auto__wrapper">
       <NavLink className={"back_button"} to={`/`}>
         {"<-- back"}
       </NavLink>
@@ -67,81 +67,90 @@ function AllAutoComponent() {
             : null
         }
       >
-        <div>
-          <h3>
-            {car.name} {car.model} - {car.year}
-            <NavLink
-              className="car__edit-link"
-              to={{
-                pathname: `/cars/update/${car.id}`,
-              }}
-              state={data}
-            >
-              <FontAwesomeIcon icon={faPencil} />
-            </NavLink>
-          </h3>
-          {images.length === 0 ? (
-            <img
-              className="car_img"
-              src={`http://auto/img/${car.image}`}
-              alt="img"
-              width={200}
-            />
-          ) : (
-            <>
-              <div className="carousel">
-                <Carousel width={500} showThumbs={false}>
-                  {images?.map((image) => (
-                    <div className="carousel__img-item" key={image.id}>
-                      <img
-                        className="carousel__img"
-                        src={`http://auto/img/${image.image}`}
-                        alt="image"
-                        width={200}
-                      />
-                    </div>
-                  ))}
-                </Carousel>
-              </div>
-              <input
-                onChange={addImageToCar}
-                type="file"
-                className="add__image-input"
+        <div className="auto">
+          <div>
+            <h3 className="auto__title">
+              <NavLink
+                className="car__edit-link"
+                to={{
+                  pathname: `/cars/update/${car.id}`,
+                }}
+                state={data}
+              >
+                <FontAwesomeIcon icon={faPencil} />
+              </NavLink>
+              {car.name} {car.model} - {car.year}
+            </h3>
+            {images.length === 0 ? (
+              <img
+                className="car_img"
+                src={`http://auto/img/${car.image}`}
+                alt="img"
+                width={200}
               />
-            </>
-          )}
-          <p>mileage - {car.mileage}km</p>
-          <p>price - {car.price}$</p>
-          <p>city - {car.city}</p>
-          <p>color - {car.color}</p>
-          <p>phone - {car.phone_number}</p>
-          {isShow && description !== null ? <AutoDetails /> : null}
-          <p>{car.dtp}</p>
-          {description.length === 0 ? (
-            <NavLink to={`/cars/add/${car.id}`}>add description</NavLink>
-          ) : (
-            <NavLink to={`/cars/details/${car.id}`}>
-              {description !== null || description.length !== 0 ? (
-                !isShow ? (
-                  <button className="showButton" onClick={getMoreDetails}>
-                    more details <FontAwesomeIcon icon={faCaretDown} />
-                  </button>
-                ) : (
-                  <button
-                    className="showButton"
-                    onClick={() => setIsShow(false)}
-                  >
-                    less details <FontAwesomeIcon icon={faCaretUp} />
-                  </button>
-                )
-              ) : null}
-            </NavLink>
-          )}
-        </div>
+            ) : (
+              <>
+                <div className="carousel">
+                  <Carousel width={500} showThumbs={false}>
+                    {images?.map((image) => (
+                      <div className="carousel__img-item" key={image.id}>
+                        <img
+                          className="carousel__img"
+                          src={`http://auto/img/${image.image}`}
+                          alt="image"
+                          width={200}
+                        />
+                      </div>
+                    ))}
+                  </Carousel>
+                </div>
+                <input
+                  onChange={addImageToCar}
+                  type="file"
+                  className="add__image-input"
+                />
+              </>
+            )}
+          </div>
+          <div className="auto__details-wrapper">
+            <p>mileage - {car.mileage}km</p>
+            <p>price - {car.price}$</p>
+            <p>city - {car.city}</p>
+            <p>color - {car.color}</p>
+            <p>phone - {car.phone_number}</p>
+            {isShow && description !== null ? <AutoDetails /> : null}
+            <p>{car.dtp}</p>
+            {description.length === 0 ? (
+              <NavLink to={`/cars/add/${car.id}`}>add description</NavLink>
+            ) : (
+              <NavLink to={`/cars/details/${car.id}`}>
+                {description !== null || description.length !== 0 ? (
+                  !isShow ? (
+                    <button className="showButton" onClick={getMoreDetails}>
+                      more details <FontAwesomeIcon icon={faCaretDown} />
+                    </button>
+                  ) : (
+                    <>
+                      <button
+                        className="showButton"
+                        onClick={() => setIsShow(false)}
+                      >
+                        less details <FontAwesomeIcon icon={faCaretUp} />
+                      </button>
+                      <NavLink to={`/cars/add/${car.id}`}>
+                        add description
+                      </NavLink>
+                    </>
+                  )
+                ) : null}
+              </NavLink>
+            )}
+          </div>
 
-        {location.pathname === `/cars/add/${car.id}` ? (
-          <AddFunctionalForm />
-        ) : null}
+          {location.pathname === `/cars/add/${car.id}` ? (
+            <AddFunctionalForm />
+          ) : null}
+        </div>
       </div>
     </div>
   );

@@ -2,8 +2,10 @@ import React, { useEffect, useState } from "react";
 import { getByFilterYears } from "../../API/car.api";
 
 import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 function SortByYear() {
+  const errorMessage = useSelector((s) => s.allCarsReducer.errorYearMessage);
   const [from, setFrom] = useState("");
   const [to, setTo] = useState("");
 
@@ -29,7 +31,7 @@ function SortByYear() {
       <div class="col2">
         <div class="m-rows e-year">
           <label for="forYear" class="pseudoelement _grey">
-            <span class="">Рік випуску </span>
+            <div class="search__form-title">Year Of Issue</div>
           </label>
           <div class="popup-wrap">
             <label for="forYear" class="fold"></label>
@@ -60,12 +62,15 @@ function SortByYear() {
                   До
                 </option>
               </select>
+              <NavLink to={"/select"}>
+                <button onClick={() => searchByYear()}>Search</button>
+              </NavLink>
             </div>
+            {errorMessage.length > 0 ? (
+              <p style={{ color: "#ff7878" }}>{errorMessage}</p>
+            ) : null}
           </div>
         </div>
-        <NavLink to={"/select"}>
-          <button onClick={() => searchByYear()}>Search</button>
-        </NavLink>
       </div>
     </div>
   );

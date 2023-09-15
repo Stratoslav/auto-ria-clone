@@ -1,22 +1,60 @@
 .filterForm{
-    background: #d25d5d;
-        padding: 15px;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        display: flex;
-        align-items: center;
-        max-width: 800px;
-        margin: 0 auto;
-        border-radius: 3px;
-            color: white;
-                font-size: 18px;
+    background: #1d6b8a;
+    padding: 15px;
+text-align: initial;
+    justify-content: space-around;
+min-width: 310px;
+    border-radius: 3px;
+    color: white;
+    font-size: 18px;
+    }
+    .filterForm > div{
+            padding-bottom: 20px;
+                border-bottom: 1px solid;
+                margin-bottom: 10px;
+    }
+    #yearFrom{
+        background: initial;
+            font-size: 18px;
+            color: #fff;
+            padding: 5px;
+            border-color: #fff;
+            margin-right: 10px;
     }
 .filterForm__selector{
+        font-size: 18px;
+            background: initial;
+            color: #fff;
+            border-color: #fff;
         width: auto;
             height: 30px;
-            background: white;
+           
 }
-.filterQuery_input{
+option {
+color: #000;
+}
+
+
+.popup-body > input, .filterQuery_input {
+        font-size: 18px;
+            background: initial;
+            border: none;
+            border-bottom: 2px solid;
+            color: #fff;
+            border-color: #fff;
+            margin-right: 10px;
+        max-width: 100px;
+            min-height: 20px;
+}
+.filterQuery_input {
     height: 30px;
     padding: 0 10px;
+    min-width: 200px;
+}
+.popup-body>input::placeholder, .filterQuery_input::placeholder{
+    color: #fff;
+}
+
+.search__form-title{
+        margin-bottom: 10px;
 }

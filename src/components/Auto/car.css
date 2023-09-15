@@ -1,13 +1,31 @@
 .car{
-    color: white;
-        font-size: 18px;
-        max-width: 600px;
+ 
+         font-size: 18px; 
+         width: 100%;
+        box-shadow: 0px 13px 11px -13px;
+       
+        /* max-width: 1000px; */
         margin: 0 auto;
-        background: #db5c4c;
-        border-radius: 3px;
-        border: 1px solid #db5c4c;
+        /* background: #1d6b8a; */
+        /* border-radius: 3px;
+        border: 1px solid #1d6b8a;
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-evenly;  */
+     
+}
+.auto{
+        display: flex;
+        flex-wrap: wrap;
+     justify-content: center;
+        padding-bottom: 20px;
+     align-items: start;}
+     .auto__title{
+        text-align: initial;
+            margin-left: 65px;
+     }
+
+.auto > div{
+    text-align: initial;
 }
 .car_img{
         width: 500px;
@@ -18,9 +36,9 @@
 .car__edit-link{
     
     position: absolute;
-    transform: translate(90px, -13px);
+    transform: translate(-63px, -5px);
     text-decoration: none;
-        color: white;
+        color: rgb(0, 0, 0);
             border: 1px solid;
                 padding: 5px;
                 border-radius: 50%;
@@ -63,12 +81,12 @@ ul > li{
 .showButton{
         border: none;
             margin-bottom: 40px;
-            background: rgba(255, 255, 255, 0.518);
+            background: rgba(0, 0, 0, 0.518);
             text-decoration: underline;
             transition: all 0.3s linear;
 }
 .showButton:hover{
-    background: white;
+    background: rgb(0, 0, 0);
 }
 .form_textarea{
         max-width: 179px;
@@ -80,10 +98,17 @@ ul > li{
 .add_form{
     display: block;
         margin: 0 auto;
-            background: #db5c4c;
+            background: #1d6b8a;
             border-radius: 3px;
-            border: 1px solid #db5c4c;
+            border: 1px solid #1d6b8a;
             display: flex;
             justify-content: space-evenly;
                 color: white;
+}
+
+.auto__details-wrapper {
+        max-width: 313px;
+        margin-top: 48px;
+    margin-left: 15px;
+min-width: 312px;
 }

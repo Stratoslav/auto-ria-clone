@@ -162,7 +162,7 @@ export async function addMoreFunctional(formData, id) {
       body: formData,
     });
     const data = await res.json();
-    console.log(data);
+    console.log(formData);
   } catch (e) {
     console.log("Error fetching data:", e.message);
   }

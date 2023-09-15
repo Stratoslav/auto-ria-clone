@@ -20,6 +20,8 @@ function FilterByName() {
 
   return (
     <div>
+      <div className="search__form-title">Search car by name or model</div>
+
       <input
         placeholder="search..."
         className="filterQuery_input"

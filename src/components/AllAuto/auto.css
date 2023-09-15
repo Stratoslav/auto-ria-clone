@@ -1,8 +1,18 @@
+.container{
+    display: flex;
+        padding: 0 15px;
+}
+.auto__list{
+    display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        width: 100%;
+}
 .car__list-item{
     display: block;
         border-bottom: 1px solid #dcdcdc;
             max-width: 1000px;
-            margin: 0 auto;
+           
             padding: 0px 10px 10px 10px ;
 }
 .car__list-link{
@@ -11,4 +21,9 @@
         color: black;
         font-weight: 500;
 text-decoration: revert;
+}
+.auto__list-item-img{
+        width: 270px;
+            height: 200px;
+            object-fit: contain;
 }

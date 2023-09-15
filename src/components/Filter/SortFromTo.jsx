@@ -9,8 +9,10 @@ function SortFromTo() {
   }, [value]);
   return (
     <div>
-      Сортувати:
+      <div className="search__form-title">Sorte By</div>
+
       <select
+        id="sort-from-to"
         className="filterForm__selector"
         onChange={(e) => {
           setValue(e.target.value);

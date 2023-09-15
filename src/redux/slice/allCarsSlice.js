@@ -2,6 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   cars: [],
+  errorPriceMessage: "",
+  errorYearMessage: "",
   loading: false,
   searchAutoQuery: "",
 };
@@ -17,10 +19,20 @@ const allCarsSlice = createSlice({
       state.cars = action.payload;
     },
     getFilteredCarByYear: (state, action) => {
-      state.cars = action.payload;
+      if (action.payload.status === false) {
+        state.errorYearMessage = action.payload.message;
+      } else {
+        state.cars = action.payload;
+        state.errorYearMessage = "";
+      }
     },
     getFilteredCarByMoney: (state, action) => {
-      state.cars = action.payload;
+      if (action.payload.status === false) {
+        state.errorPriceMessage = action.payload.message;
+      } else {
+        state.cars = action.payload;
+        state.errorPriceMessage = "";
+      }
     },
     getFilteredCarFromTo: (state, action) => {
       state.cars = action.payload;
