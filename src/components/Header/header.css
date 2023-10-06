@@ -5,6 +5,9 @@
             box-shadow: 0 0 14px -2px black;
             margin-bottom: 50px;
             text-align: initial;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
 }
 
 .header > a {
