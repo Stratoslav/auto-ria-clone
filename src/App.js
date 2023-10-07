@@ -11,10 +11,11 @@ import AllAuto from "./components/AllAuto/AllAuto";
 import { useSelector } from "react-redux";
 import Login from "./components/User/Login/Login";
 import Register from "./components/User/Register/Register";
+import { useEffect } from "react";
 
 function App() {
   const { isAuth } = useSelector((s) => s.userSliceReducer);
-
+  useEffect(() => {}, [isAuth]);
   return (
     <div className="App">
       <Header />

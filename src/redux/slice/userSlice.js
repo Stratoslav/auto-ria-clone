@@ -1,8 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
-
+let isAuth =
+  localStorage.getItem("isAuth") !== undefined
+    ? JSON.parse(localStorage.getItem("isAuth"))
+    : false;
+let user =
+  localStorage.getItem("user") !== undefined
+    ? JSON.parse(localStorage.getItem("user"))
+    : [];
 const initialState = {
-  isAuth: false,
+  isAuth: isAuth,
   errors: [],
+  response: [],
+  user: user,
 };
 
 const userSlice = createSlice({
@@ -11,13 +20,16 @@ const userSlice = createSlice({
   reducers: {
     getErrors: (state, action) => {
       state.errors = action.payload;
+      state.response = action.payload;
     },
-    // getCarImages: (state, action) => {
-    //   state.images = action.payload;
-    // },
-    // getCarDescription: (state, action) => {
-    //   state.description = action.payload;
-    // },
+    isAuth: (state, action) => {
+      state.isAuth = action.payload;
+      localStorage.setItem("isAuth", JSON.stringify(state.isAuth));
+    },
+    getUser: (state, { payload }) => {
+      state.user = payload;
+      localStorage.setItem("user", JSON.stringify(state.user?.user));
+    },
   },
 });
 
